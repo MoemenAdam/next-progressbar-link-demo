@@ -189,7 +189,7 @@ export default function Home() {
               {[
                 { label: 'Directions', value: '8', icon: '🧭' },
                 { label: 'Zero Config', value: '✓', icon: '⚡' },
-                { label: 'Bundle Size', value: '~5KB', icon: '📦' },
+                { label: 'Bundle Size', value: '~50KB', icon: '📦' },
               ].map((stat, index) => (
                 <div
                   key={stat.label}
