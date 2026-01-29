@@ -1,11 +1,8 @@
-'use client';
 import Link from 'next-progressbar-link';
-import { NavigationProgress } from 'next-progressbar-link';
 
 export default function Home() {
   return (
     <>
-      <NavigationProgress />
       <div className="min-h-screen bg-linear-to-br from-slate-950 via-purple-950 to-slate-900">
         {/* Animated background */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
