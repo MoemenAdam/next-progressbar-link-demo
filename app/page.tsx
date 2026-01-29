@@ -27,7 +27,7 @@ export default function Home() {
                   </p>
                 </div>
                 <a
-                  href="https://github.com/yourusername/next-progressbar-link"
+                  href="https://github.com/MoemenAdam/next-progressbar-link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white text-sm font-medium transition-all duration-300 hover:scale-105"

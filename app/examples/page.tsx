@@ -1,14 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+'use client';
+import { useState } from 'react';
 import Link from 'next-progressbar-link';
 
-async function getData() {
-  const delay = Math.floor(Math.random() * 1500) + 500;
-  await new Promise((resolve) => setTimeout(resolve, delay));
-  return { loadTime: delay };
-}
-
-export default async function ExamplesPage() {
-  const data = await getData();
-
+export default function ExamplesPage() {
   const examples = [
     {
       title: 'Top Progress Bar',
@@ -89,64 +84,9 @@ export default async function ExamplesPage() {
               <p className="text-lg text-slate-300 max-w-2xl mx-auto">
                 Copy and paste these examples to get started quickly
               </p>
-              <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-violet-500/20 border border-violet-500/30 rounded-full">
-                <span className="text-sm text-violet-300">
-                  Loaded in {data.loadTime}ms
-                </span>
-              </div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-6 mb-16">
-              {examples.map((example, index) => (
-                <div
-                  key={example.title}
-                  className="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 p-6 transition-all duration-300 hover:border-white/30"
-                  style={{ animationDelay: `${index * 75}ms` }}
-                >
-                  <div
-                    className={`absolute inset-0 bg-linear-to-br ${example.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
-                  ></div>
-
-                  <div className="relative">
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      {example.title}
-                    </h3>
-                    <p className="text-sm text-slate-400 mb-4">
-                      {example.description}
-                    </p>
-
-                    <div className="relative">
-                      <div className="bg-slate-950 rounded-lg p-4 overflow-x-auto">
-                        <code className="text-sm text-slate-300 font-mono break-all">
-                          {example.code}
-                        </code>
-                      </div>
-                      <button
-                        onClick={() =>
-                          navigator.clipboard.writeText(example.code)
-                        }
-                        className="absolute top-2 right-2 p-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg transition-all duration-300 hover:scale-105 group/btn"
-                        title="Copy code"
-                      >
-                        <svg
-                          className="w-4 h-4 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <ExampleGrid examples={examples} />
 
             {/* Full Example */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
@@ -155,8 +95,8 @@ export default async function ExamplesPage() {
                 Complete Example
               </h2>
               <p className="text-slate-300 mb-6">
-                Here&apos;s a complete example showing how to set up the package in
-                your Next.js app
+                Here&apos;s a complete example showing how to set up the package
+                in your Next.js app
               </p>
 
               <div className="space-y-4">
@@ -247,5 +187,76 @@ export default function Home() {
         </div>
       </div>
     </>
+  );
+}
+
+function ExampleGrid({ examples }: any) {
+  // array لتخزين حالة النسخ لكل مثال
+  const [copiedIndex, setCopiedIndex] = useState(null);
+
+  const handleCopy = async (code: any, index: any) => {
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopiedIndex(index);
+      setTimeout(() => setCopiedIndex(null), 1000);
+    } catch (err) {
+      console.error('Failed to copy!', err);
+    }
+  };
+
+  return (
+    <div className="grid lg:grid-cols-2 gap-6 mb-16">
+      {examples.map((example: any, index: any) => (
+        <div
+          key={example.title}
+          className="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 p-6 transition-all duration-300 hover:border-white/30"
+          style={{ animationDelay: `${index * 75}ms` }}
+        >
+          <div
+            className={`absolute inset-0 bg-linear-to-br ${example.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+          ></div>
+
+          <div className="relative">
+            <h3 className="text-xl font-bold text-white mb-2">
+              {example.title}
+            </h3>
+            <p className="text-sm text-slate-400 mb-4">{example.description}</p>
+
+            <div className="relative">
+              <div className="bg-slate-950 rounded-lg py-4 pl-4 pr-10 overflow-x-auto">
+                <code className="text-sm text-slate-300 font-mono break-al">
+                  {example.code}
+                </code>
+              </div>
+
+              <button
+                onClick={() => handleCopy(example.code, index)}
+                className={`absolute top-2 right-2 p-2 border border-white/20 rounded-lg transition-all duration-300 cursor-pointer
+                  ${
+                    copiedIndex === index
+                      ? 'bg-green-500 scale-110'
+                      : 'bg-white/10 hover:bg-white/20 hover:scale-105'
+                  }`}
+                title="Copy code"
+              >
+                <svg
+                  className="w-4 h-4 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }
