@@ -85,14 +85,16 @@ export default async function DocsPage() {
                     <div className="bg-slate-950 rounded-lg p-4 overflow-x-auto">
                       <pre className="text-sm text-slate-300 font-mono">
                         {`// app/layout.tsx
-import { NavigationProgress } from 'next-progressbar-link';
+import { NavigationProgress, NavigationProvider } from 'next-progressbar-link';
 
 export default function RootLayout({ children }) {
   return (
     <html>
       <body>
-        <NavigationProgress />
-        {children}
+        <NavigationProvider>
+          <NavigationProgress />
+          {children}
+        </NavigationProvider>
       </body>
     </html>
   );
