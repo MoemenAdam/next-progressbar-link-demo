@@ -67,7 +67,7 @@ export default async function InstallationPage() {
                 <ul className="space-y-3 text-slate-300">
                   <li className="flex items-start gap-3">
                     <svg
-                      className="w-6 h-6 text-teal-400 mt-0.5 flex-shrink-0"
+                      className="w-6 h-6 text-teal-400 mt-0.5 shrink-0"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -81,7 +81,7 @@ export default async function InstallationPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <svg
-                      className="w-6 h-6 text-teal-400 mt-0.5 flex-shrink-0"
+                      className="w-6 h-6 text-teal-400 mt-0.5 shrink-0"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -235,7 +235,7 @@ export default function Page() {
               <div className="rounded-2xl bg-linear-to-br from-teal-600/20 to-cyan-600/20 border border-teal-500/30 p-8 text-center">
                 <div className="text-5xl mb-4">🎉</div>
                 <h2 className="text-3xl font-bold text-white mb-4">
-                  That's It!
+                  That&apos;s It!
                 </h2>
                 <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
                   Your app now has a beautiful progress bar during navigation.
@@ -295,7 +295,7 @@ export default function Page() {
                       Progress bar not showing?
                     </h3>
                     <p className="text-sm text-slate-400">
-                      Make sure you're using Next.js App Router (not Pages
+                      Make sure you&apos;re using Next.js App Router (not Pages
                       Router) and that NavigationProgress is added to your root
                       layout inside the body tag.
                     </p>

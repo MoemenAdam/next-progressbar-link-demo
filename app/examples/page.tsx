@@ -155,7 +155,7 @@ export default async function ExamplesPage() {
                 Complete Example
               </h2>
               <p className="text-slate-300 mb-6">
-                Here's a complete example showing how to set up the package in
+                Here&apos;s a complete example showing how to set up the package in
                 your Next.js app
               </p>
 

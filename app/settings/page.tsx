@@ -300,7 +300,7 @@ export default function SettingsPage() {
                 <h4 className="text-lg font-bold text-white mb-2">Pro Tip</h4>
                 <p className="text-sm text-slate-300">
                   Try different combinations of directions and colors to find
-                  the perfect match for your website's design.
+                  the perfect match for your website&apos;s design.
                 </p>
               </div>
               <div className="rounded-xl bg-linear-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 p-6">
@@ -309,8 +309,8 @@ export default function SettingsPage() {
                   Performance
                 </h4>
                 <p className="text-sm text-slate-300">
-                  The progress bar is optimized and lightweight. It won't affect
-                  your app's performance.
+                  The progress bar is optimized and lightweight. It won&apos;t affect
+                  your app&apos;s performance.
                 </p>
               </div>
             </div>
