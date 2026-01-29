@@ -1,5 +1,5 @@
 import Link from 'next-progressbar-link';
-
+export const dynamic = 'force-dynamic';
 async function getData() {
   const delay = Math.floor(Math.random() * 1500) + 500;
   await new Promise((resolve) => setTimeout(resolve, delay));
