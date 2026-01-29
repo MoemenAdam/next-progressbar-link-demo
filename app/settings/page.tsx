@@ -2,7 +2,6 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next-progressbar-link';
-import { NavigationProgress } from 'next-progressbar-link';
 
 const directions: { value: any; label: string; position: string }[] = [
   { value: 'top-to-right', label: 'Top → Right', position: 'Top' },
@@ -32,8 +31,6 @@ export default function SettingsPage() {
 
   return (
     <>
-      <NavigationProgress direction={direction} color={color} />
-
       <div className="min-h-screen bg-linear-to-br from-slate-950 via-indigo-950 to-slate-900">
         {/* Animated background */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
