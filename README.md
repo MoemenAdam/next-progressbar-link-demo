@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# next-progressbar-link Demo
+
+This is an interactive demo showcasing the `next-progressbar-link` package.
+
+## Features
+
+- 🎨 **Interactive Control Panel** - Customize direction and color in real-time
+- 🔄 **Multiple Pages** - Each page has simulated loading delays (500ms-2s)
+- 💅 **Modern UI** - Beautiful, dark-themed design with gradients and animations
+- 📱 **Responsive** - Works perfectly on all screen sizes
 
 ## Getting Started
 
-First, run the development server:
-
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Pages
 
-## Learn More
+- **Home** (`/`) - Main landing page with navigation cards
+- **Settings** (`/settings`) - Interactive control panel with direction and color customization
+- **About** (`/about`) - Information about the package
+- **Features** (`/features`) - Showcase of all features
+- **Documentation** (`/docs`) - Complete documentation
+- **Examples** (`/examples`) - Code examples
+- **Customization** (`/customization`) - Customization guide
+- **Installation** (`/installation`) - Installation instructions
 
-To learn more about Next.js, take a look at the following resources:
+## Key Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Direction Control
+Choose from 8 different directions:
+- `top-to-right` / `top-to-left`
+- `bottom-to-right` / `bottom-to-left`
+- `left-to-bottom` / `left-to-top`
+- `right-to-bottom` / `right-to-top`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Color Picker
+- Custom color input
+- 8 preset colors
+- Real-time preview
 
-## Deploy on Vercel
+### Simulated Loading
+Each page has a random loading delay between 500ms and 2 seconds to demonstrate the progress bar in action.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- next-progressbar-link
+
+## License
+
+MIT
