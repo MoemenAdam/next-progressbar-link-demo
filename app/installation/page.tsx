@@ -1,14 +1,7 @@
+'use client';
 import Link from 'next-progressbar-link';
 
-async function getData() {
-  const delay = Math.floor(Math.random() * 1500) + 500;
-  await new Promise((resolve) => setTimeout(resolve, delay));
-  return { loadTime: delay };
-}
-
-export default async function InstallationPage() {
-  const data = await getData();
-
+export default function InstallationPage() {
   return (
     <>
       <div className="min-h-screen bg-linear-to-br from-slate-950 via-teal-950 to-slate-900">
@@ -50,11 +43,6 @@ export default async function InstallationPage() {
               <p className="text-lg text-slate-300">
                 Get up and running in under 2 minutes
               </p>
-              <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-teal-500/20 border border-teal-500/30 rounded-full">
-                <span className="text-sm text-teal-300">
-                  Loaded in {data.loadTime}ms
-                </span>
-              </div>
             </div>
 
             <div className="space-y-8">
